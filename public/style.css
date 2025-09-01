@@ -1,3 +1,222 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(0, 0, 0);
 }
+#header {
+ 
+       background-color: rgb(4, 97, 134);
+    text-align: center;
+    padding: 10px;
+    border-radius: 1px;
+    width: 100%;
+    grid-area: header;
+    
+
+}
+#site {
+    display: grid;
+    grid-template-columns: repeat(1,100%); 
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header "
+        "main "
+        "disco "
+        "footer "
+    ;
+}
+#disco {
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+#footer {
+    background-color: rgb(4, 97, 134);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    
+}
+#content {
+  display: flex;
+   justify-content: center; 
+   align-items: center;
+}
+h1 {
+    color: rgb(0, 0, 0);
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+  :root {
+      --w: 100%;
+      --h: 56.25vw; /* 16:9 baseado na largura */
+      --h-max: 480px; /* altura máxima para telas grandes */
+      --radius: 20px;
+    }
+
+    body { 
+      margin: 0; 
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; 
+      background: #000000;
+      color: #e7e9ee;
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+      padding: 24px;
+    }
+
+    .carousel {
+      position: relative;
+      width: min(900px, 100%);
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      background: #111522;
+      isolation: isolate;
+      texye
+    }
+
+
+    .carousel > input { 
+      position: absolute; 
+      opacity: 0; 
+      pointer-events: none; 
+    }
+
+    .viewport { 
+      width: 100%; 
+      height: 100%; 
+      overflow: hidden; 
+    }
+
+    .track { 
+      display: flex; 
+      width: 400%; /* 4 slides */
+      height: 100%; 
+      transition: transform .6s cubic-bezier(.22,.61,.36,1);
+    }
+
+    .slide { 
+      width: 100%; 
+      height: 100%; 
+      position: relative; 
+      flex: 0 0 100%; 
+
+      display: grid; 
+      place-items: center; 
+      background: #000000; 
+    }
+
+    .slide img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      display: block; 
+      
+      user-select: none; 
+      -webkit-user-drag: none;
+    }
+
+    /* Movimento do track por slide selecionado */
+    #s1:checked ~ .viewport .track { transform: translateX(0%); }
+    #s2:checked ~ .viewport .track { transform: translateX(-100%); }
+    #s3:checked ~ .viewport .track { transform: translateX(-200%); }
+    #s4:checked ~ .viewport .track { transform: translateX(-300%); }
+
+    /* Setas (uma de cada lado) */
+    .controls { 
+      position: absolute; 
+      inset: 0; 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      pointer-events: none; 
+      z-index: 5;
+    }
+
+    .arrow { 
+      pointer-events: auto; 
+      display: grid; 
+      place-items: center; 
+      padding: 0 8px; 
+      transition: background .2s ease; 
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .arrow:hover { background: linear-gradient(90deg, rgba(0,0,0,.28), transparent); }
+    .arrow.right:hover { background: linear-gradient(270deg, rgba(0,0,0,.28), transparent); }
+
+    .arrow button, .arrow label { 
+      all: unset; 
+      width: 44px; 
+      height: 44px; 
+      display: grid; 
+      place-items: center; 
+      border-radius: 999px; 
+      background: rgba(255,255,255,.15); 
+      backdrop-filter: blur(6px); 
+      box-shadow: 0 4px 20px rgba(0,0,0,.35);
+      cursor: pointer; 
+    }
+
+    .arrow label:focus-visible { outline: 3px solid #7aa2ff; outline-offset: 3px; }
+    .arrow svg { width: 22px; height: 22px; }
+
+    /* Exibir apenas o par de setas correto para o slide atual */
+    .pair { display: none; align-items: center; justify-content: space-between; }
+    #s1:checked ~ .controls .pair.p1 { display: contents; }
+    #s2:checked ~ .controls .pair.p2 { display: contents; }
+    #s3:checked ~ .controls .pair.p3 { display: contents; }
+    #s4:checked ~ .controls .pair.p4 { display: contents; }
+
+    /* Indicadores (bolinhas) */
+    .dots { 
+      position: absolute; 
+      left: 0; right: 0; bottom: 10px; 
+      display: flex; 
+      gap: 8px; 
+      justify-content: center; 
+      z-index: 6; 
+    }
+
+    .dot { 
+      width: 10px; height: 10px; 
+      border-radius: 999px; 
+      background: rgba(255,255,255,.4); 
+      box-shadow: 0 1px 6px rgba(0,0,0,.35);
+      transition: transform .2s ease, background .2s ease; 
+      cursor: pointer; 
+    }
+
+    #s1:checked ~ .dots label[for="s1"],
+    #s2:checked ~ .dots label[for="s2"],
+    #s3:checked ~ .dots label[for="s3"],
+    #s4:checked ~ .dots label[for="s4"] { 
+      background: white; 
+      transform: scale(1.2); 
+    }
+
+    /* Texto opcional sobreposto */
+    .caption { 
+      position: absolute; 
+      left: 16px; right: 16px; bottom: 52px; 
+      padding: 10px 14px; 
+      border-radius: 12px; 
+      background: rgba(0,0,0,.3); 
+      color: #f0f3ff; 
+      font-size: clamp(14px, 2.2vw, 18px);
+      line-height: 1.35; 
+      text-shadow: 0 1px 12px rgba(0,0,0,.5);
+      z-index: 4;
+    }
