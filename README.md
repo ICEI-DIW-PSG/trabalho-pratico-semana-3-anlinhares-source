@@ -10,17 +10,17 @@ Nessa atividade, você deverá montar a página inicial do projeto escolhido, a 
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome:Arthur Nunes linhares
+- Matricula:856984
+- Proposta de projeto escolhida:curiosidades e traduções de musicas de bandas 
+- Breve descrição sobre seu projeto:um projeto de fâ para fã para compartilhar curiosidades e interpretações sobre letras e significados de algun sons
 
 
 ## Print do(s) wireframe(s) criado
 
-<<  COLOQUE A IMAGEM AQUI >>
+![alt text](<public/imagens/WhatsApp Image 2025-08-30 at 18.18.19.jpeg>)
 
 
 ## Print da home-page criada
 
-<<  COLOQUE A IMAGEM AQUI >>
+[text](README.md) ![text](public/imagens/image.png)
